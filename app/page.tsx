@@ -1,7 +1,7 @@
 
 "use client"
 import { useEffect, useState } from "react"
-import { Card, CardContent } from "../components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 const target=new Date("2026-02-17T00:00:00")
 function getLeft(){
   const diff=target.getTime()-Date.now()
@@ -18,10 +18,10 @@ export default function Page(){
   useEffect(()=>{const i=setInterval(()=>setT(getLeft()),1000);return()=>clearInterval(i)},[])
   const pad=(n:number)=>String(n).padStart(2,"0")
   return (
-    <main style={{display:"flex",minHeight:"100vh",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
-      <h1>Lunar New Year Countdown</h1>
-      <Card><CardContent><h2>{t.d} Days</h2></CardContent></Card>
-      <Card><CardContent><h2>{pad(t.h)}:{pad(t.m)}:{pad(t.s)}</h2></CardContent></Card>
+    <main className="flex min-h-screen flex-col items-center justify-center gap-6">
+      <h1 className="text-3xl font-bold">Lunar New Year Countdown</h1>
+      <Card><CardContent><div className="text-6xl font-bold text-center">{t.d}</div><div className="text-center">Days</div></CardContent></Card>
+      <Card><CardContent><div className="text-4xl font-mono text-center">{pad(t.h)}:{pad(t.m)}:{pad(t.s)}</div></CardContent></Card>
     </main>
   )
 }
