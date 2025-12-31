@@ -1,0 +1,1 @@
+Place this folder inside a Next.js App Router project. Install shadcn/ui and add card component.
