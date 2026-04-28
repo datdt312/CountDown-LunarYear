@@ -2,7 +2,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
-const target=new Date("2026-02-17T00:00:00")
+const target = new Date("2027-02-06T00:00:00");
 function getLeft(){
   const diff=target.getTime()-Date.now()
   if(diff<=0) return {d:0,h:0,m:0,s:0}
